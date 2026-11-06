@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quiet-file-team-mcp"
+version = "0.1.0"
+description = "Six offline guidance tools for a local file-first agent team"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.20,<2"]
+
+[project.scripts]
+quiet-file-team-mcp = "quiet_file_team_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quiet_file_team_mcp"]
