@@ -1,8 +1,30 @@
 # Quiet File Team MCP
 
-Six free offline guidance tools for a file-first quiet team on one trusted shared Linux machine.
+Give Claude, Cursor or any MCP client six free offline tools that explain, configure and check a Quiet File Team (several bots sharing one computer through files). Nothing leaves your machine: no network calls, no file reads, no paid APIs.
 
-## Install / Use
+## How to use this
+
+```bash
+uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0 quiet-file-team-mcp
+```
+
+1. **Install [uv](https://docs.astral.sh/uv/)** (Python 3.11+); no token or account is needed.
+2. **Add the server to your MCP client** with the JSON below (Cursor, Claude Desktop or any stdio client).
+3. **Ask**, e.g. "Explain the quiet file team method, then draft a config for lead, builder and helper in Europe/London." Use the output with the free [Bash core](https://github.com/pandadad0214/quiet-file-team).
+
+## For AI agents
+
+| Field | Value |
+| --- | --- |
+| Purpose | Offline guidance for the Quiet File Team method: explain it, draft config and early-exit text, validate a supplied layout, draft a practice workflow, batch owner questions. |
+| Use when | Setting up or reviewing a file-first multi-bot team on one shared Linux machine. |
+| Do not use when | You need the scripts themselves (use the [Bash core](https://github.com/pandadad0214/quiet-file-team)), real filesystem inspection, scheduling or messaging. |
+| Install | `uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0 quiet-file-team-mcp` (stdio) |
+| Tools | `explain_method`, `generate_team_config`, `generate_early_exit`, `validate_layout_manifest`, `draft_workflow`, `draft_owner_batch` |
+| Outputs | Structured JSON per tool (output schemas included). |
+| Side effects and cost | None: read-only, non-destructive, idempotent, closed-world. Free. |
+
+## Install details
 
 ```bash
 uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0 quiet-file-team-mcp
@@ -16,7 +38,7 @@ For Cursor, Claude Desktop or another stdio MCP client:
 {"mcpServers":{"quiet-file-team":{"command":"uvx","args":["--from","git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0","quiet-file-team-mcp"]}}}
 ```
 
-The server requires Python 3.11+ and `uv` on the client. It computes text from bounded supplied inputs. It does not read arbitrary files, call network APIs, execute generated shell, install software or schedule anything. No paid APIs or Actor wrapper; latency is unbenchmarked. Tool outputs are drafts, not authorization or proof of runtime safety. No PyPI package is claimed.
+The server requires Python 3.11+ and `uv` on the client. It computes text from bounded supplied inputs. It does not read arbitrary files, call network APIs, execute generated shell, install software or schedule anything. No paid APIs or Actor wrapper; latency is unbenchmarked. Tool outputs are drafts, not authorization or proof of runtime safety. Not on PyPI; install from the git tag.
 
 | Tool | Use |
 |---|---|
@@ -29,11 +51,19 @@ The server requires Python 3.11+ and `uv` on the client. It computes text from b
 
 All tools are read-only, non-destructive, idempotent and closed-world. Structured output schemas accompany each. Optional task summaries are not evidence of a decision; no tool sends a message. Input privacy guards are heuristic, not comprehensive secret detection.
 
-## Free core / editions
+## Editions and how to switch
 
-The usable free Bash core is https://github.com/pandadad0214/quiet-file-team. To install it: `git clone https://github.com/pandadad0214/quiet-file-team.git`, set TEAM_DIR to the checkout, follow its README and smoke test in a disposable copy. This guidance MCP does not replace or install those scripts.
+| Edition | Price | Where |
+| --- | --- | --- |
+| Free Bash core (the scripts) | Free | [quiet-file-team](https://github.com/pandadad0214/quiet-file-team) |
+| This MCP companion (guidance only) | Free | this repo |
+| Agensi setup kit skill | $29 one-time | [agensi.io/skills/quiet-file-team-setup-kit](https://agensi.io/skills/quiet-file-team-setup-kit) |
+| Apify setup kit generator (configured ZIP) | $29 per generated kit | [apify.com/pandadad0214/quiet-file-team-setup](https://apify.com/pandadad0214/quiet-file-team-setup) |
 
-A paid setup kit is planned but not for sale yet; there is no paid listing asserted here. The free path needs no purchase. If switching to free-only from optional guidance, keep current data backed up, use a separate clean core and repoint routines deliberately; never merge fictional logs.
+- **MCP → free core:** `curl -fsSL https://github.com/pandadad0214/quiet-file-team/archive/refs/tags/v0.1.0.tar.gz | tar xz && mv quiet-file-team-0.1.0 team`, set `TEAM_DIR`, follow its README. This MCP does not install those scripts.
+- **Free → Agensi skill:** load the skill in your agent; it guides install, rule packs and acceptance checks in your own folder.
+- **Free → Apify generator:** fill Roster (`TEAM_IDS`), IANA time zone (`TEAM_TZ`) and Coordinator (`lead`), allow a max charge of at least $29, Start, then download `OUTPUT.zip` from the run's key-value store into a new folder.
+- **Paid → free:** keep data backed up, use a separate clean core and repoint routines deliberately; never merge fictional logs.
 
 ## For developers
 
