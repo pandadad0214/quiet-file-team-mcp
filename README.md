@@ -2,6 +2,12 @@
 
 Give Claude, Cursor or any MCP client six free offline tools that explain, configure and check a Quiet File Team (several bots sharing one computer through files). Nothing leaves your machine: no network calls, no file reads, no paid APIs.
 
+## Part of [Panda Federation](https://pandafederation.github.io/)
+
+[![Part of Panda Federation](https://pandafederation.github.io/assets/badge.svg)](https://pandafederation.github.io/)
+
+This project is a module of the Panda Federation — public-data tools, MCP servers, and local-first apps in one catalog. See the rest of the work, including books when they publish and the matching free or paid editions of this tool, at the [official site](https://pandafederation.github.io/).
+
 ## How to use this
 
 ```bash
