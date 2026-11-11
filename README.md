@@ -1,6 +1,12 @@
 # Quiet File Team MCP
 
+<!-- mcp-name: io.github.pandadad0214/quiet-file-team-mcp -->
+
 Give Claude, Cursor or any MCP client six free offline tools that explain, configure and check a Quiet File Team (several bots sharing one computer through files). Nothing leaves your machine: no network calls, no file reads, no paid APIs.
+
+[![PyPI](https://img.shields.io/pypi/v/quiet-file-team-mcp)](https://pypi.org/project/quiet-file-team-mcp/)
+[![Latest Release](https://img.shields.io/github/v/release/pandadad0214/quiet-file-team-mcp?label=latest%20release)](https://github.com/pandadad0214/quiet-file-team-mcp/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ## Part of [Panda Federation](https://pandafederation.com/)
 
@@ -13,7 +19,7 @@ Follow on X: [@PandaFedHQ](https://x.com/PandaFedHQ)
 ## How to use this
 
 ```bash
-uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0 quiet-file-team-mcp
+uvx quiet-file-team-mcp
 ```
 
 1. **Install [uv](https://docs.astral.sh/uv/)** (Python 3.11+); no token or account is needed.
@@ -27,7 +33,7 @@ uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0 qu
 | Purpose | Offline guidance for the Quiet File Team method: explain it, draft config and early-exit text, validate a supplied layout, draft a practice workflow, batch owner questions. |
 | Use when | Setting up or reviewing a file-first multi-bot team on one shared Linux machine. |
 | Do not use when | You need the scripts themselves (use the [Bash core](https://github.com/pandadad0214/quiet-file-team)), real filesystem inspection, scheduling or messaging. |
-| Install | `uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0 quiet-file-team-mcp` (stdio) |
+| Install | `uvx quiet-file-team-mcp` (stdio, Python 3.11+) |
 | Tools | `explain_method`, `generate_team_config`, `generate_early_exit`, `validate_layout_manifest`, `draft_workflow`, `draft_owner_batch` |
 | Outputs | Structured JSON per tool (output schemas included). |
 | Side effects and cost | None: read-only, non-destructive, idempotent, closed-world. Free. |
@@ -35,7 +41,13 @@ uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0 qu
 ## Install details
 
 ```bash
-uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0 quiet-file-team-mcp
+uvx quiet-file-team-mcp
+```
+
+From this repo instead of PyPI:
+
+```bash
+uvx --from git+https://github.com/pandadad0214/quiet-file-team-mcp.git quiet-file-team-mcp
 ```
 
 A GitHub Release also provides the wheel, source archive and checksums: https://github.com/pandadad0214/quiet-file-team-mcp/releases/latest
@@ -43,10 +55,12 @@ A GitHub Release also provides the wheel, source archive and checksums: https://
 For Cursor, Claude Desktop or another stdio MCP client:
 
 ```json
-{"mcpServers":{"quiet-file-team":{"command":"uvx","args":["--from","git+https://github.com/pandadad0214/quiet-file-team-mcp.git@v0.1.0","quiet-file-team-mcp"]}}}
+{"mcpServers":{"quiet-file-team":{"command":"uvx","args":["quiet-file-team-mcp"]}}}
 ```
 
-The server requires Python 3.11+ and `uv` on the client. It computes text from bounded supplied inputs. It does not read arbitrary files, call network APIs, execute generated shell, install software or schedule anything. No paid APIs or Actor wrapper; latency is unbenchmarked. Tool outputs are drafts, not authorization or proof of runtime safety. Not on PyPI; install from the git tag.
+Official MCP Registry name for this stdio package: `io.github.pandadad0214/quiet-file-team-mcp` ([server.json](server.json)). Registry clients install the PyPI package with `uvx quiet-file-team-mcp`. The git command above stays the install path from this repo.
+
+The server requires Python 3.11+ and `uv` on the client. It computes text from bounded supplied inputs. It does not read arbitrary files, call network APIs, execute generated shell, install software or schedule anything. No paid APIs or Actor wrapper; latency is unbenchmarked. Tool outputs are drafts, not authorization or proof of runtime safety.
 
 | Tool | Use |
 |---|---|
@@ -64,7 +78,7 @@ All tools are read-only, non-destructive, idempotent and closed-world. Structure
 | Edition | Price | Where |
 | --- | --- | --- |
 | Free Bash core (the scripts) | Free | [quiet-file-team](https://github.com/pandadad0214/quiet-file-team) |
-| This MCP companion (guidance only) | Free | this repo |
+| This MCP companion (guidance only) | Free | [PyPI](https://pypi.org/project/quiet-file-team-mcp/) and this repo |
 | Agensi setup kit skill | $29 one-time | [agensi.io/skills/quiet-file-team-setup-kit](https://agensi.io/skills/quiet-file-team-setup-kit) |
 | Apify setup kit generator (configured ZIP) | $29 per generated kit | [apify.com/pandadad0214/quiet-file-team-setup](https://apify.com/pandadad0214/quiet-file-team-setup) |
 

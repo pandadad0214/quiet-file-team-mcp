@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.27,<2"]
+requires = ["hatchling==1.33.0"]
 build-backend = "hatchling.build"
 
 [project]
@@ -8,8 +8,28 @@ version = "0.1.0"
 description = "Six offline guidance tools for a local file-first agent team"
 readme = "README.md"
 license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
-dependencies = ["mcp>=1.20,<2"]
+authors = [{ name = "Panda Federation (pandadad0214)" }]
+keywords = ["mcp", "mcp-server", "quiet-file-team", "panda-federation"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "mcp>=1.20,<2",
+]
+
+[project.urls]
+Homepage = "https://pandafederation.com/quiet-file-team-mcp/"
+Source = "https://github.com/pandadad0214/quiet-file-team-mcp"
+"Bash core" = "https://github.com/pandadad0214/quiet-file-team"
 
 [project.scripts]
 quiet-file-team-mcp = "quiet_file_team_mcp.server:main"
@@ -18,7 +38,9 @@ quiet-file-team-mcp = "quiet_file_team_mcp.server:main"
 packages = ["src/quiet_file_team_mcp"]
 
 [dependency-groups]
-dev = ["ruff==0.17.3"]
+dev = [
+  "ruff==0.17.3",
+]
 
 [tool.ruff]
 line-length = 120
