@@ -79,12 +79,12 @@ All tools are read-only, non-destructive, idempotent and closed-world. Structure
 | --- | --- | --- |
 | Free Bash core (the scripts) | Free | [quiet-file-team](https://github.com/pandadad0214/quiet-file-team) |
 | This MCP companion (guidance only) | Free | [PyPI](https://pypi.org/project/quiet-file-team-mcp/) and this repo |
-| Agensi setup kit skill | $29 one-time | [agensi.io/skills/quiet-file-team-setup-kit](https://agensi.io/skills/quiet-file-team-setup-kit) |
-| Apify setup kit generator (configured ZIP) | $29 per generated kit | [apify.com/pandadad0214/quiet-file-team-setup](https://apify.com/pandadad0214/quiet-file-team-setup) |
+| Agensi setup kit skill | Paid ([live price on the listing](https://agensi.io/skills/quiet-file-team-setup-kit)) | [agensi.io/skills/quiet-file-team-setup-kit](https://agensi.io/skills/quiet-file-team-setup-kit) |
+| Apify setup kit generator (configured ZIP) | Paid, per generated kit ([live price on the Store](https://apify.com/pandadad0214/quiet-file-team-setup)) | [apify.com/pandadad0214/quiet-file-team-setup](https://apify.com/pandadad0214/quiet-file-team-setup) |
 
 - **MCP → free core:** `curl -fsSL https://github.com/pandadad0214/quiet-file-team/archive/refs/tags/v0.1.0.tar.gz | tar xz && mv quiet-file-team-0.1.0 team`, set `TEAM_DIR`, follow its README. This MCP does not install those scripts.
 - **Free → Agensi skill:** load the skill in your agent; it guides install, rule packs and acceptance checks in your own folder.
-- **Free → Apify generator:** fill Roster (`TEAM_IDS`), IANA time zone (`TEAM_TZ`) and Coordinator (`lead`), allow a max charge of at least $29, Start, then download `OUTPUT.zip` from the run's key-value store into a new folder.
+- **Free → Apify generator:** fill Roster (`TEAM_IDS`), IANA time zone (`TEAM_TZ`) and Coordinator (`lead`), allow a max charge at least the per-kit price shown on the [Store page](https://apify.com/pandadad0214/quiet-file-team-setup), Start, then download `OUTPUT.zip` from the run's key-value store into a new folder.
 - **Paid → free:** keep data backed up, use a separate clean core and repoint routines deliberately; never merge fictional logs.
 
 ## For developers
