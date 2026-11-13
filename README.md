@@ -71,7 +71,7 @@ The server requires Python 3.11+ and `uv` on the client. It computes text from b
 | draft_workflow | Fictional default-roster practice steps, not operational history |
 | draft_owner_batch | Deduplicate explicit owner questions and retain unresolved task references |
 
-All tools are read-only, non-destructive, idempotent and closed-world. Structured output schemas accompany each. Optional task summaries are not evidence of a decision; no tool sends a message. Input privacy guards are heuristic, not comprehensive secret detection.
+All tools are read-only, non-destructive, idempotent and closed-world. Structured output schemas accompany each. Optional task summaries are not evidence of a decision; no tool contacts anyone or delivers anything. Input privacy guards are heuristic, not comprehensive secret detection.
 
 ## Editions and how to switch
 

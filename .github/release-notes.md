@@ -8,7 +8,7 @@ uvx quiet-file-team-mcp@{{VERSION}}
 - Official MCP Registry name: `io.github.pandadad0214/quiet-file-team-mcp`.
 
 ### Changed
-- Docs only: the editions table now labels the two setup kits as Paid and links to the live price on each listing instead of a hard-coded amount. Free/paid cross-links and switching steps are unchanged.
-- No tool or code changes.
+- `draft_owner_batch` still only drafts and deduplicates owner questions on the local machine. Its description and warning no longer say "send messages" or "message sent," which a scanner had read as an external-sink capability. The tool name is unchanged, so existing clients keep working. It does not contact anyone or deliver anything.
+- No behavior change.
 
 Full docs: [README](https://github.com/pandadad0214/quiet-file-team-mcp#readme).

@@ -98,6 +98,11 @@ def test_schemas_annotations_and_six_tools():
         assert tool.annotations.openWorldHint is False
         for word in ("unlike", "Free", "latency", "Returns"):
             assert word in tool.description
+        if tool.name == "draft_owner_batch":
+            lowered = tool.description.lower()
+            assert "send_message" not in lowered
+            assert "send messages" not in lowered
+            assert "message sent" not in lowered
         for field, schema in tool.inputSchema["properties"].items():
             assert schema.get("description"), (tool.name, field)
 

@@ -397,8 +397,9 @@ def draft_owner_batch(
 ) -> BatchResult:
     """
     Structure supplied owner-decision questions into a bounded review batch; unlike draft_workflow,
-    organize decisions rather than simulate job execution. Use before an authorized owner review, never
-    to send messages, infer approval or invent answers. Free offline text processing, no network or paid
+    organize decisions rather than simulate job execution. Use before an authorized owner review.
+    This tool only drafts and deduplicates questions for local review; it does not contact anyone,
+    infer approval, or invent answers. Free offline text processing, no network or paid
     API and unbenchmarked short latency. Identical explicit questions merge task ids; missing questions
     or cap overflow preserve unresolved references. Returns questions, unresolved ids and warnings;
     summaries alone do not establish a decision.
@@ -425,7 +426,7 @@ def draft_owner_batch(
         questions=list(groups.values()),
         unresolved_task_ids=unresolved,
         warnings=[
-            "Draft only; no message sent and no decision inferred.",
+            "Draft only; nothing is delivered or decided.",
             "Missing evidence and overflow remain unresolved; review source tasks before owner contact.",
             "Task references and summaries do not authorize externally visible actions.",
         ],
